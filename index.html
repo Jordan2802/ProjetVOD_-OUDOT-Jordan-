@@ -4,6 +4,8 @@
 <head>
   <meta charset="utf-8">
   <link rel="stylesheet" href="css/style.css">
+  <link rel="stylesheet" href="css/slick.css">
+  <link rel="stylesheet" href="css/slick-theme.css">
   <link href="https://fonts.googleapis.com/css?family=Roboto" rel="stylesheet">
   <title>VOD Métropolis</title>
 </head>
@@ -29,61 +31,69 @@
     </div>
   </header>
   <div class="container">
-  <nav>
-    <div class="nav--search">
-      <h2>Rechercher un film:</h2>
-      <form class="form--search" action="index.html" method="post">
-        <div><label for="">Titre:</label><input type="text" name="" value=""></div><br>
-        <div><label for="">Genre:</label><input type="text" name="" value=""></div><br>
-        <div><label for="">Réalisateur:</label><input type="text" name="" value=""></div><br>
-        <div><input type="submit" id="button--search" name="search" value="Rechercher"></div>
-    </form>
-    </div>
-    <div class="nav--genre">
-      <h2>Genre:</h2>
-      <ul>
-          <li>Voir tout les films</li>
-          <li>Lorem.</li>
-          <li>Quas?</li>
-          <li>Repudiandae.</li>
-          <li>Dolorem!</li>
-          <li>Doloremque.</li>
-          <li>Aliquam.</li>
-          <li>Incidunt?</li>
-          <li>Provident.</li>
-          <li>Voluptas!</li>
-          <li>Iste!</li>
-          <li>Ea.</li>
-          <li>Corrupti.</li>
-          <li>Officiis.</li>
-          <li>Nemo.</li>
-          <li>Itaque.</li>
-          <li>Velit.</li>
-          <li>Animi.</li>
-          <li>Magni?</li>
-          <li>Blanditiis!</li>
-          <li>Tempore.</li>
-          <li>Fugit!</li>
-          <li>Officiis!</li>
+    <nav>
+      <div class="nav--search">
+        <h2>Rechercher un film:</h2>
+        <form class="form--search" action="index.html" method="post">
+          <div><label for="">Titre:</label><input type="text" name="" value=""></div><br>
+          <div><label for="">Genre:</label><input type="text" name="" value=""></div><br>
+          <div><label for="">Réalisateur:</label><input type="text" name="" value=""></div><br>
+          <div><input type="submit" id="button--search" name="search" value="Rechercher"></div>
+        </form>
+      </div>
+      <div class="nav--genre">
+        <h2>Genre:</h2>
+        <ul>
+          <li> <a href="#"> Voir tout les films</a></li>
+          <li> <a href="#"> Lorem.</a></li>
+          <li> <a href="#"> Quas?</a></li>
+          <li> <a href="#"> Repudiandae.</a></li>
+          <li> <a href="#"> Dolorem!</a></li>
+          <li> <a href="#"> Doloremque.</a></li>
+          <li> <a href="#"> Aliquam.</a></li>
+          <li> <a href="#"> Incidunt?</a></li>
+          <li> <a href="#"> Provident.</a></li>
+          <li> <a href="#"> Voluptas!</a></li>
+          <li> <a href="#"> Iste!</a></li>
+          <li> <a href="#"> Ea.</a></li>
+          <li> <a href="#"> Corrupti.</a></li>
+          <li> <a href="#"> Officiis.</a></li>
+          <li> <a href="#"> Nemo.</a></li>
+          <li> <a href="#"> Itaque.</a></li>
+          <li> <a href="#"> Velit.</a></li>
+          <li> <a href="#"> Animi.</a></li>
+          <li> <a href="#"> Magni?</a></li>
+          <li> <a href="#"> Blanditiis!</a></li>
+          <li> <a href="#"> Tempore.</a></li>
+          <li> <a href="#"> Fugit!</a></li>
+          <li> <a href="#"> Officiis!</a></li>
         </ul>
-    </div>
-  </nav>
-  <main>
+      </div>
+    </nav>
+    <main>
 
-    <div class="slider demo">
-  <div> Slide  1 </div>
-  <div> Slide  2 </div>
-  <div> Slide  3 </div>
-  ...
-  </div>
 
-  </main>
+    </main>
   </div>
   <footer>
-
+    <div class="footer--mention">
+      <p>Mentions légals</p>
+      <p>Politique de protectiondes données personnelles</p>
+      <p>Inscription</p>
+      <p>Cookies</p>
+    </div>
+    <div class="footer--form">
+      <h2>Nous contacter:</h2>
+      <form action="" class="form--message">
+        <div><label for="">Email:</label><input type="email"></div><br>
+        <div><label for="">Message:</label> <textarea name="name" rows="8" cols="30"></textarea> </div><br>
+        <div><input type="submit" id="button--envoyer" name="search" value="Envoyer"></div>
+      </form>
+    </div>
   </footer>
 
   <script type="text/javascript" src="js/app.js"></script>
 </body>
+
 
 </html>
