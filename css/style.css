@@ -42,11 +42,14 @@ h1 {
 }
 
 .header--img {
-  width: 500px;
+  width: 450px;
   height: 299px;
-  background-color: blue;
 }
-
+.header--img img{
+  margin-top: 45px;
+  width: 150%;
+  height: auto;
+}
 .co--insc {
   display: flex;
   justify-content: space-between;
@@ -90,11 +93,11 @@ nav {
   width: 25vw;
   height: auto;
   background-color: #111;
+  border: 1px solid #8d5200;
 }
 
 .nav--search {
-  border: 1px solid #8d5200;
-  padding-left: 30px;
+  border-bottom: 1px solid #8d5200;
 }
 
 .form--search {
@@ -118,8 +121,7 @@ nav {
   box-shadow: 1px 0px 20px #8d5200;
 }
 
-.nav--genre {
-  border: 1px solid #8d5200;
+.nav--genre,.nav--search {
   padding-left: 30px;
 }
 
@@ -133,7 +135,7 @@ nav {
 /*Main*/
 
 main {
-  width: 100%;
+  width: 80%;
   height: auto;
   background-image: url(../img/cinema.jpg);
   background-repeat: no-repeat;
@@ -143,6 +145,54 @@ main {
 /*carrousel*/
 
 /**********************************************************************/
+
+
+/*carou*/
+main h2{
+  padding: 15px 15px 15px 15px;
+}
+.slider-nav img, .slider-nav2 img, .slider-nav3 img{
+  width: 120px;
+  height: 160px;
+}
+.main-carousel, .main-carousel2, .main-carousel3{
+  width: 95%;
+  margin-left: 2%;
+}
+.slider-for img, .slider-for2 img, .slider-for3 img{
+  width: 480px;
+  height: 640px;
+  margin: 30px 0 15px 50px;
+}
+main .affiche, main .affiche2, main .affiche3{
+  background-color: rgba(17,17,17,0.9);
+  margin-top: 25px;
+  margin-bottom: 25px;
+  border: 1px solid #8d5200;
+}
+main .description, main .description2, main .description3{
+width: 40%;
+height: auto;
+padding: 10px 0px 30px 50px;
+}
+
+
+/*carou1*/
+
+.activer{
+  display: none;
+}
+
+/*carou2*/
+
+
+
+
+
+
+/*carou3*/
+
+
 
 
 
