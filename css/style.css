@@ -162,7 +162,7 @@ main h2{
 .slider-for img, .slider-for2 img, .slider-for3 img{
   width: 480px;
   height: 640px;
-  margin: 30px 0 15px 50px;
+  margin: 0px 0 15px 50px;
 }
 main .affiche, main .affiche2, main .affiche3{
   background-color: rgba(17,17,17,0.9);
@@ -175,9 +175,6 @@ width: 40%;
 height: auto;
 padding: 10px 0px 30px 50px;
 }
-
-
-/*carou1*/
 
 .activer{
   display: none;
@@ -206,6 +203,10 @@ padding: 10px 0px 30px 50px;
   top: 20px;
   width: 50px;
 }
+
+/*carou1*/
+
+
 /*carou2*/
 
 
