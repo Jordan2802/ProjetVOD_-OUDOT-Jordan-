@@ -112,7 +112,7 @@ nav {
   margin-bottom: 20px;
 }
 
-#button--search, footer #button--envoyer {
+#button--search, footer #button--envoyer, #button-detail {
   padding: 20px 30px;
   font-size: 1.3em;
   color: #fed653;
