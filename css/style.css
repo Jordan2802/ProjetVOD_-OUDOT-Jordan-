@@ -183,6 +183,29 @@ padding: 10px 0px 30px 50px;
   display: none;
 }
 
+.affiche-cacher{
+  display: none;
+}
+
+.croix, .croix2, .croix3 {
+  background: #3f4151;
+  height: 50px;
+  position: relative;
+  width: 10px;
+  transform: rotate(45deg);
+  left: 95%;
+  margin-top: 15px;
+  cursor: pointer;
+}
+.croix:after,.croix2:after,.croix3:after {
+  background: #3f4151;
+  content: "";
+  height: 10px;
+  left: -20px;
+  position: absolute;
+  top: 20px;
+  width: 50px;
+}
 /*carou2*/
 
 
