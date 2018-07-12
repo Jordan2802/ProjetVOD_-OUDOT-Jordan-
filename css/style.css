@@ -41,6 +41,7 @@ h1 {
   text-transform: uppercase;
 }
 
+
 .header--img {
   width: 450px;
   height: 299px;
@@ -119,6 +120,7 @@ nav {
   border: 1px solid #8d5200;
   background-color: rgba(17, 17, 17, 0.5);
   box-shadow: 1px 0px 20px #8d5200;
+  cursor: pointer;
 }
 
 .nav--genre,.nav--search {
@@ -142,6 +144,10 @@ main {
   background-size: cover;
 }
 
+.slider-nav img,.slider-nav2 img, .slider-nav3 img{
+  cursor: pointer;
+}
+
 /*carrousel*/
 
 /**********************************************************************/
@@ -149,7 +155,7 @@ main {
 
 /*carou*/
 main h2{
-  padding: 15px 15px 15px 15px;
+  padding: 30px 15px 30px 15px;
 }
 .slider-nav img, .slider-nav2 img, .slider-nav3 img{
   width: 120px;
@@ -163,6 +169,7 @@ main h2{
   width: 480px;
   height: 640px;
   margin: 0px 0 15px 50px;
+  position: relative;
 }
 main .affiche, main .affiche2, main .affiche3{
   background-color: rgba(17,17,17,0.9);
@@ -174,8 +181,15 @@ main .description, main .description2, main .description3{
 width: 40%;
 height: auto;
 padding: 10px 0px 30px 50px;
+position: absolute;
+left: 40%;
+top:20%;
 }
 
+#button-detail{
+  margin-left: 60%;
+  margin-top: 30px;
+}
 .activer{
   display: none;
 }
