@@ -2,13 +2,14 @@
 nav
 -->
 
+
 <nav>
   <div class="nav--search">
     <h2>Rechercher un film:</h2>
-    <form class="form--search" action="index.html" method="post">
-      <div><label for="">Titre:</label><input type="text" name="" value=""></div><br>
-      <div><label for="">Genre:</label><input type="text" name="" value=""></div><br>
-      <div><label for="">Réalisateur:</label><input type="text" name="" value=""></div><br>
+    <form class="form--search" action="details.php" method="post">
+      <div><label for="">Titre:</label><input type="text" name="titreFilm" value=""></div><br>
+      <div><label for="">Genre:</label><input type="text" name="genreFilm" value=""></div><br>
+      <div><label for="">Réalisateur:</label><input type="text" name="realFilm" value=""></div><br>
       <div><input type="submit" id="button--search" name="search" value="Rechercher"></div>
     </form>
   </div>

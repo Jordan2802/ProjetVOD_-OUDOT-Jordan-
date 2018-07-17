@@ -3,35 +3,54 @@
 ############ PDO-Extension #############
 ###########################################
 -->
-<?php
-$host_name = 'localhost';
-$database = 'metrovod';
-$user_name = 'root';
-$password = '';
+<!DOCTYPE html>
+<html lang="fr" dir="ltr">
+  <head>
+    <meta charset="latin_1">
+    <title></title>
+  </head>
+  <body>
+    <form class="" action="bdd.php" method="post">
+      <input type="text" name="titreFilm" value="">
+      <input type="submit" name="" value="ok">
+    </form>
+    <?php
 
-$dbh = null;
-try {
-  $dbh = new PDO("mysql:host=$host_name; dbname=$database;", $user_name, $password);
-  echo "<p>Connexion au serveur MySQL établie avec succès via pdo.</p >";
-} catch (PDOException $e) {
-  echo "Erreur!: " . $e->getMessage() . "<br/>";
-  die();
-}
 
-$reponse = $dbh->query('SELECT * FROM genre WHERE titre_film = "avatar" ');
 
-// On affiche chaque entrée une à une
-while ($donnees = $reponse->fetch())
-{
-?>
-    <p>
-    <strong>ID genre</strong> : <?php echo $donnees['ID_genre']; ?><br />
-    genres : <?php echo $donnees['genre']; ?><br />
-    film : <?php echo $donnees['titre_film']; ?><br />
-   </p>
-<?php
-}
+    $host_name = 'localhost';
+    $database = 'metrovod';
+    $user_name = 'root';
+    $password = '';
 
-$reponse->closeCursor(); // Termine le traitement de la requête
+    $dbh = null;
+    try {
+      $dbh = new PDO("mysql:host=$host_name; dbname=$database;", $user_name, $password);
 
-?>
+      $choixFilm = $_POST['titreFilm'];
+      $reponse = $dbh->query('SELECT * FROM film WHERE titre_film = "'.$choixFilm.'"');
+
+      // On affiche chaque entrée une à une
+      while ($donnees = $reponse->fetch())
+      {
+          $IDfilm =    $donnees['ID_film'];
+          $titreFilm =    $donnees['titre_film'];
+          $synopsisFilm = $donnees['synopsis_film'];
+          $afficheFilm =  $donnees["affiche_film"];
+
+      }
+
+      $reponse->closeCursor(); // Termine le traitement de la requête
+    } catch (PDOException $e) {
+      echo "Erreur!: " . $e->getMessage() . "<br/>";
+      die();
+    }
+
+
+    ?>
+  </body>
+  <?php echo $titreFilm ?> <br>
+  <?php echo $synopsisFilm ?> <br>
+  <img src=" <?php echo $afficheFilm ?>  ">
+
+</html>

@@ -57,11 +57,6 @@ h1 {
 .form--back{
   display: flex;
   align-items: center;
-  width: 100%;
-  height: 1000px;
-  background-image: url(../img/cinema.jpg);
-  background-repeat: no-repeat;
-  background-size: cover;
 }
 .header--co{
   width: 600px;
@@ -137,7 +132,7 @@ nav {
   margin-bottom: 20px;
 }
 
-#button--search, footer #button--envoyer, #button-detail, .header--co #button-valider {
+#button--search, footer #button--envoyer, #button-detail, .header--co #button-valider,.detail-valider input {
   padding: 20px 30px;
   font-size: 1.3em;
   color: #fed653;
@@ -172,6 +167,17 @@ main {
   cursor: pointer;
 }
 
+  .form--back{
+  width: 100%;
+  height: 1000px;
+  background-image: url(../img/cinema.jpg);
+  background-repeat: no-repeat;
+  background-size: cover;
+}
+
+.container{
+  display: flex;
+}
 /*carrousel*/
 
 /**********************************************************************/
@@ -189,7 +195,7 @@ main h2{
   width: 95%;
   margin-left: 2%;
 }
-.slider-for img, .slider-for2 img, .slider-for3 img{
+.slider-for img, .slider-for2 img, .slider-for3 img, .detail-affiche img{
   width: 480px;
   height: 640px;
   margin: 0px 0 15px 50px;
@@ -256,8 +262,44 @@ top:20%;
 
 
 
+/*****************************************************************************/
+
+/*detail film */
+.detail-affiche img{
+  margin: 0;
+}
+main{
+  display: flex;
+  justify-content: space-around;
+}
+
+.detail-descr{
+  width: 80%;
+}
+.detail-descr span{
+  width: 70%;
+  padding: 10px;
+  float: right;
+  border: 1px solid #8d5200;
+  background-color: rgba(17,17,17,0.5);
+}
+.detail-synopsisFilm{
+  width: 100%;
+}
+
+.detail-left, .detail-right{
+  width: 40%;
+  margin-top: 50px;
+}
 
 
+ .detail-synopsisFilm, .detail-valider input, .detail-realFilm,.detail-genreFilm, .detail-acteurFilm{
+  margin-top: 80px;
+}
+
+.detail-titreFilm{
+  font-size: 2em;
+}
 /*Footer*/
 
 footer {

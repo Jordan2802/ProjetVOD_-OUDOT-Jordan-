@@ -1,6 +1,39 @@
 <!--
 carousel
 -->
+<?php
+    $host_name = 'localhost';
+    $database = 'metrovod';
+    $user_name = 'root';
+    $password = '';
+
+    $dbh = null;
+    try {
+      $dbh = new PDO("mysql:host=$host_name; dbname=$database;", $user_name, $password);
+      echo "<p>Connexion au serveur MySQL établie avec succès via pdo.</p >";
+    } catch (PDOException $e) {
+      echo "Erreur!: " . $e->getMessage() . "<br/>";
+      die();
+    }
+
+    $reponse = $dbh->query('SELECT * FROM film WHERE ID_film = 4 ');
+    //echo $reponse->fetch()[0];
+    // On affiche chaque entrée une à une
+    while ($donnees = $reponse->fetch())
+    {
+    ?>
+        <p>
+        <strong>ID genre</strong> : <?php echo $donnees['ID_film']; ?><br />
+        film : <?php echo $donnees['titre_film']; ?><br />
+        synopis : <?php echo $donnees['synopsis_film']; ?><br />
+        affiche:<?php echo '<img src=" '. $donnees["affiche_film"] .' ">'; ?><br />
+       </p>
+    <?php
+    }
+
+    $reponse->closeCursor(); // Termine le traitement de la requête
+
+    ?>
 <main>
   <div class="main-carousel">
     <h2>Nouveautés:</h2>
