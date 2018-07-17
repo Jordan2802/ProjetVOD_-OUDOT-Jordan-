@@ -28,13 +28,20 @@
       $genreFilm = $_POST['genreFilm'];
       $RealFilm = $_POST['realFilm'];
       $reponse = $dbh->query('SELECT * FROM film
+        INNER JOIN realise
+        ON realise.ID_film = film.ID_film
         INNER JOIN realisateur
-        ON ID_film = ID_REAL
+        ON realise.ID_REAL = realisateur.ID_REAL
+        INNER JOIN appartenir
+        ON appartenir.ID_film = film.ID_film
         INNER JOIN genre
-        ON ID_film = ID_genre
+        ON genre.ID_genre = appartenir.ID_genre
+        INNER JOIN participe
+        ON participe.ID_film = film.ID_film
         INNER JOIN acteur
-        ON ID_film = ID_acteur
-        WHERE titre_film LIKE  "%'.$choixFilm.'%" ');
+        ON acteur.ID_acteur = participe.ID_acteur
+        WHERE titre_film
+        LIKE  "%'.$choixFilm.'%" ');
       // On affiche chaque entrée une à une
       while ($donnees = $reponse->fetch())
       {
