@@ -5,7 +5,11 @@
   <head>
     <meta charset="utf-8">
     <link href="https://fonts.googleapis.com/css?family=Roboto" rel="stylesheet">
+    <link href="https://cdn.jsdelivr.net/npm/slick-carousel@1.6.0/slick/slick.css" rel="stylesheet">
+    <link href="https://cdn.jsdelivr.net/npm/slick-carousel@1.6.0/slick/slick-theme.css" rel="stylesheet">
     <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="css/slick.css">
+    <link rel="stylesheet" href="css/slick-theme.css">
     <title>détail du film</title>
   </head>
   <body>
@@ -16,51 +20,45 @@
     </header>
     <?php
 
-    $host_name = 'localhost';
-    $database = 'metrovod';
-    $user_name = 'root';
-    $password = '';
+    include("bdd.php");
+    $choixFilm = $_POST['titreFilm'];
+    $genreFilm = $_POST['genreFilm'];
+    $RealFilm = $_POST['realFilm'];
 
-    $dbh = null;
-    try {
-      $dbh = new PDO("mysql:host=$host_name; dbname=$database;", $user_name, $password,array(PDO::MYSQL_ATTR_INIT_COMMAND => 'SET NAMES utf8') );
-      $choixFilm = $_POST['titreFilm'];
-      $genreFilm = $_POST['genreFilm'];
-      $RealFilm = $_POST['realFilm'];
-      $reponse = $dbh->query('SELECT * FROM film
-        INNER JOIN realise
-        ON realise.ID_film = film.ID_film
-        INNER JOIN realisateur
-        ON realise.ID_REAL = realisateur.ID_REAL
-        INNER JOIN appartenir
-        ON appartenir.ID_film = film.ID_film
-        INNER JOIN genre
-        ON genre.ID_genre = appartenir.ID_genre
-        INNER JOIN participe
-        ON participe.ID_film = film.ID_film
-        INNER JOIN acteur
-        ON acteur.ID_acteur = participe.ID_acteur
-        WHERE titre_film
-        LIKE  "%'.$choixFilm.'%" ');
-      // On affiche chaque entrée une à une
-      while ($donnees = $reponse->fetch())
-      {
-          $IDfilm =    $donnees['ID_film'];
-          $titreFilm =    $donnees['titre_film'];
-          $synopsisFilm = $donnees['synopsis_film'];
-          $afficheFilm =  $donnees["affiche_film"];
-          $genre =  $donnees["genre"];
-          $acteurs =  $donnees["prenom_acteur"] . " " . $donnees["nom_acteur"] ;
-          $realisateur = $donnees["prenom_real"] . " " . $donnees["nom_real"];
+    $reponse = $dbh->query('SELECT * FROM film
+      INNER JOIN realise
+      ON realise.ID_film = film.ID_film
+      INNER JOIN realisateur
+      ON realise.ID_REAL = realisateur.ID_REAL
+      INNER JOIN appartenir
+      ON appartenir.ID_film = film.ID_film
+      INNER JOIN genre
+      ON genre.ID_genre = appartenir.ID_genre
+      INNER JOIN participe
+      ON participe.ID_film = film.ID_film
+      INNER JOIN acteur
+      ON acteur.ID_acteur = participe.ID_acteur
+      WHERE titre_film
+      LIKE  "%'.$choixFilm.'%"');
 
-      }
 
-      $reponse->closeCursor(); // Termine le traitement de la requête
-    } catch (PDOException $e) {
-      echo "Erreur!: " . $e->getMessage() . "<br/>";
-      die();
+
+
+    // On affiche chaque entrée une à une
+    while ($donnees = $reponse->fetch())
+    {
+        $IDfilm =  $donnees['ID_film'];
+        $titreFilm =  $donnees['titre_film'];
+        $synopsisFilm = $donnees['synopsis_film'];
+        $afficheFilm =  $donnees["affiche_film"];
+        $genre =  $donnees["genre"];
+        $acteurs =  $donnees["prenom_acteur"] . " " . $donnees["nom_acteur"] ;
+        $realisateur = $donnees["prenom_real"] . " " . $donnees["nom_real"];
+
     }
 
+
+    $reponse->closeCursor(); // Termine le traitement de la requête
     ?>
   <div class="container">
 
@@ -68,7 +66,7 @@
     <?php
     include("includes/nav.php");
      ?>
-    <main>
+    <main id="main-detail">
       <div class="detail-left">
         <div class="detail-affiche">
           <img src=" <?php echo $afficheFilm ?>  ">
