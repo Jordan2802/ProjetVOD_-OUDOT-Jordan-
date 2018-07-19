@@ -1,3 +1,4 @@
+
 <!DOCTYPE html>
 <html lang="fr" dir="ltr">
 
@@ -16,9 +17,11 @@
 <body>
 
   <header>
-<?php
-include("includes/header.html");
- ?>
+    <div class="header--img"><img src="img/metro.png" alt=""></div>
+    <div class="header--titre">
+      <h1> <a href="menu.php">metropolis vod</a></h1>
+    
+    </div>
   </header>
   <div class="container">
 
@@ -27,7 +30,7 @@ include("includes/header.html");
       include("includes/connexion.html");
        ?>
 
-    
+
   </div>
   <footer>
     <?php

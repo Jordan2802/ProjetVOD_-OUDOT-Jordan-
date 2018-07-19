@@ -1,4 +1,4 @@
-
+<?php session_start(); ?>
 
 <!DOCTYPE html>
 <html lang="fr" dir="ltr">
@@ -15,15 +15,13 @@
   <body>
     <header>
   <?php
-  include("includes/header.html");
+  include("includes/header.php");
    ?>
     </header>
     <?php
 
     include("bdd.php");
     $choixFilm = $_POST['titreFilm'];
-    $genreFilm = $_POST['genreFilm'];
-    $RealFilm = $_POST['realFilm'];
 
     $reponse = $dbh->query('SELECT * FROM film
       INNER JOIN realise

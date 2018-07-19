@@ -1,3 +1,4 @@
+<?php session_start(); ?>
 <!DOCTYPE html>
 <html lang="fr" dir="ltr">
 <head>
@@ -13,7 +14,7 @@
   <body>
     <header>
   <?php
-  include("includes/header.html");
+  include("includes/header.php");
    ?>
     </header>
     <div class="container">
@@ -21,31 +22,32 @@
       include("includes/nav.php");
       ?>
 <main>
+  <div class="detail-img">
   <?php
-  $host_name = 'localhost';
-  $database = 'metrovod';
-  $user_name = 'root';
-  $password = '';
-
-  $dbh = null;
-  try {
-    $dbh = new PDO("mysql:host=$host_name; dbname=$database;", $user_name, $password,array(PDO::MYSQL_ATTR_INIT_COMMAND => 'SET NAMES utf8') );
-
-  } catch (PDOException $e) {
-    echo "Erreur!: " . $e->getMessage() . "<br/>";
-    die();
-  }
+  include("bdd.php");
   ?>
   <?php
-    $reponse2 = $dbh->query('SELECT affiche_film FROM films');
-        while ($donnees = $reponse2->fetch())
+  
+    $reponse2 = $dbh->query('SELECT * FROM film
+                             INNER JOIN appartenir ON film.ID_film = appartenir.ID_film
+                             WHERE ID_genre = "'.$_POST["genre_id"].'"');
+
+      while ($donnees = $reponse2->fetch())
         {
 
-            echo $donnees["affiche_film"]; 
+          ?>
+
+          <a href="details.php"><img src="<?php  echo $donnees["affiche_film"]; ?>" alt="image film"></a>
+
+
+          <?php
+
 
 
         }
     ?>
+
+    </div>
 </main>
     </div>
 
