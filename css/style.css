@@ -32,12 +32,13 @@ header {
 
 .header--titre {
   color: #fed653;
-  font-size: 3em;
+  font-size: 1.5em;
   align-self: center;
+  font-weight:200;
 }
 
 h1 a {
-  font-family: "desdemona black";
+  font-family: 'Asset', cursive;
   text-transform: uppercase;
   text-decoration: none;
   color: #fed653;
@@ -59,12 +60,17 @@ h1 a {
   padding-top: 50px;
   margin-right: 30px;
   text-align: right;
-  font-size: 0.5em;
+  font-size: 1em;
 }
 .session a{
+
   margin-left: 20px;
   text-decoration: none;
   color:#fed653;
+}
+
+.session a:hover{
+  color:#8d5200;
 }
 /**************************************************************************/
 
@@ -123,6 +129,8 @@ flex-direction: column;
 .nav--genre a{
   text-decoration: none;
   color:#fed653;
+  font-size: 1.5em;
+  margin-left: 5px;
 }
 nav {
   width: 25vw;
@@ -240,7 +248,7 @@ padding: 10px 0px 30px 50px;
 
 #button-detail{
   margin-top: 30px;
-  margin-left:37% ;
+  margin-left:40% ;
   z-index: 1000;
 }
 .activer{
@@ -326,6 +334,12 @@ padding: 10px 0px 30px 50px;
   margin: 15px;
   width: 240px;
   height: 320px;
+  cursor: pointer;
+}
+
+.detail-img img:hover{
+box-shadow: 5px 5px 15px #111;
+
 }
 
 .hidden-button{
