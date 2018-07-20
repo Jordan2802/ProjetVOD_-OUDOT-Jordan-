@@ -14,12 +14,12 @@ nav
   <div class="nav--genre">
     <h2>Genre:</h2>
     <ul>
-      <li> <a href="./genreFilm.php"> Voir tout les films</a></li>
+      <li> <a href="./tout.php"> Voir tout les films</a></li>
       <?php
       include("bdd.php");
       ?>
       <?php
-      
+
         $reponse3 = $dbh->query('SELECT * FROM genre ORDER BY genre ');
             while ($donnees = $reponse3->fetch())
             {

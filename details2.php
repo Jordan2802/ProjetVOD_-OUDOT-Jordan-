@@ -21,9 +21,8 @@
     <?php
 
     include("bdd.php");
-    $choixFilm = $_POST['titreFilm'];
-  
-    $reponse = $dbh->query('SELECT * FROM film
+    $carouFilm = $_POST['film_id'];
+    $requestDetail = $dbh->query('SELECT * FROM film
       INNER JOIN realise
       ON realise.ID_film = film.ID_film
       INNER JOIN realisateur
@@ -36,14 +35,12 @@
       ON participe.ID_film = film.ID_film
       INNER JOIN acteur
       ON acteur.ID_acteur = participe.ID_acteur
-      WHERE titre_film
-      LIKE  "%'.$choixFilm.'%"');
-
+      WHERE film.ID_film = "'.$carouFilm.'"');
 
 
 
     // On affiche chaque entrée une à une
-    while ($donnees = $reponse->fetch())
+    while ($donnees = $requestDetail->fetch())
     {
         $IDfilm =  $donnees['ID_film'];
         $titreFilm =  $donnees['titre_film'];
@@ -56,7 +53,7 @@
     }
 
 
-    $reponse->closeCursor(); // Termine le traitement de la requête
+    $requestDetail->closeCursor(); // Termine le traitement de la requête
     ?>
   <div class="container">
 

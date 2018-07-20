@@ -220,7 +220,7 @@ main h2{
 .slider-for img, .slider-for2 img, .slider-for3 img, .detail-affiche img{
   width: 480px;
   height: 640px;
-  margin: 0px 0 15px 50px;
+  margin: auto;
   position: relative;
 }
 
@@ -240,6 +240,8 @@ padding: 10px 0px 30px 50px;
 
 #button-detail{
   margin-top: 30px;
+  margin-left:37% ;
+  z-index: 1000;
 }
 .activer{
   display: none;
@@ -324,6 +326,11 @@ padding: 10px 0px 30px 50px;
   margin: 15px;
   width: 240px;
   height: 320px;
+}
+
+.hidden-button{
+  border: none;
+  background-color: inherit;
 }
 /*Footer*/
 

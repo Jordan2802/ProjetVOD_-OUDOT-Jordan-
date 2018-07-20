@@ -6,12 +6,12 @@ carousel
   include("bdd.php");
   ?>
   <?php
-    $reponse3 = $dbh->query('SELECT affiche_film FROM film');
-    $reponse4 = $dbh->query('SELECT affiche_film FROM film');
-    $reponse5 = $dbh->query('SELECT affiche_film FROM film');
-    $reponse6 = $dbh->query('SELECT affiche_film FROM film');
-    $reponse7 = $dbh->query('SELECT affiche_film FROM film');
-    $reponse8 = $dbh->query('SELECT affiche_film FROM film');
+    $reponse3 = $dbh->query('SELECT affiche_film,ID_film FROM film');
+    $reponse4 = $dbh->query('SELECT affiche_film,ID_film FROM film');
+    $reponse5 = $dbh->query('SELECT affiche_film,ID_film FROM film');
+    $reponse6 = $dbh->query('SELECT affiche_film,ID_film FROM film');
+    $reponse7 = $dbh->query('SELECT affiche_film,ID_film FROM film');
+    $reponse8 = $dbh->query('SELECT affiche_film,ID_film FROM film');
     ?>
   <div class="main-carousel">
     <h2>Nouveautés:</h2>
@@ -38,13 +38,17 @@ carousel
           ?>
           <div>
           <img src="<?php  echo $donnees["affiche_film"]; ?>" alt="affiche avengers">
+          <div class="description">
+            <form class="" action="details2.php" method="post">
+              <input type="hidden" name="film_id" value=" <?php echo $donnees['ID_film']; ?> ">
+              <input type="submit" id="button-detail" name="button" value="Voir les détails">
+            </form>
+          </div>
           </div>
           <?php
         }
         ?>
-          <div class="description">
-             <input type="submit" id="button-detail" name="" value="Voir les détails">
-          </div>
+
         </div>
       </div>
 
@@ -73,13 +77,17 @@ carousel
           ?>
           <div>
           <img src="<?php  echo $donnees["affiche_film"]; ?>" alt="affiche avengers">
+          <div class="description2">
+            <form class="" action="details2.php" method="post">
+              <input type="hidden" name="film_id" value=" <?php echo $donnees['ID_film']; ?> ">
+              <input type="submit" id="button-detail" name="button" value="Voir les détails">
+            </form>
+          </div>
           </div>
           <?php
         }
         ?>
-          <div class="description2">
-             <input type="submit" id="button-detail" name="" value="Voir les détails">
-          </div>
+
         </div>
       </div>
     </div>
@@ -109,13 +117,17 @@ carousel
 
             <div>
             <img src="<?php  echo $donnees["affiche_film"]; ?>" alt="affiche avengers">
+            <div class="description3">
+              <form class="" action="details2.php" method="post">
+                <input type="hidden" name="film_id" value=" <?php echo $donnees['ID_film']; ?> ">
+                <input type="submit" id="button-detail" name="button" value="Voir les détails">
+              </form>
+            </div>
             </div>
             <?php
           }
           ?>
-          <div class="description3">
-             <input type="submit" id="button-detail" name="" value="Voir les détails">
-          </div>
+
         </div>
       </div>
     </div>
