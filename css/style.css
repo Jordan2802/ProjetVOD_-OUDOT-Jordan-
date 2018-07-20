@@ -32,17 +32,18 @@ header {
 
 .header--titre {
   color: #fed653;
-  font-size: 1.5em;
+  font-size: 2em;
   align-self: center;
-  font-weight:200;
+
 }
 
 h1 a {
-  font-family: 'Asset', cursive;
-  text-transform: uppercase;
+  letter-spacing: 4px;
+  font-family: 'Erica One', cursive;
   text-decoration: none;
   color: #fed653;
   margin-right:30px ;
+  font-weight:100;
 }
 
 

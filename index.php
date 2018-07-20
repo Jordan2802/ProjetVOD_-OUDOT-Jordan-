@@ -5,7 +5,7 @@
 <head>
   <meta charset="utf-8">
   <link href="https://fonts.googleapis.com/css?family=Roboto" rel="stylesheet">
-  <link href="https://fonts.googleapis.com/css?family=Asset" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css?family=Erica+One" rel="stylesheet">
   <link rel="stylesheet" href="css/style.css">
   <link rel="stylesheet" href="css/slick.css">
   <link rel="stylesheet" href="css/slick-theme.css">
