@@ -33,7 +33,8 @@
         ?>
         <form class="" action="details3.php" method="post" >
           <input type="hidden" name="filmgenre_id" value="<?php echo $donnees['ID_film']; ?>">
-          <label for="<?php echo $donnees['ID_film']; ?>"> <img src="<?php  echo $donnees["affiche_film"]; ?>" alt="image film"></label> <br> <input type="submit" name="button" id="<?php echo $donnees['ID_film']; ?>" class="hidden-button" value="">
+          <label for="<?php echo $donnees['ID_film']; ?>"> <img src="<?php  echo $donnees["affiche_film"]; ?>" alt="image film"></label> <br>
+           <input type="submit" name="button" id="<?php echo $donnees['ID_film']; ?>" class="hidden-button" value="">
         </form>
         <?php
       }  ?>
