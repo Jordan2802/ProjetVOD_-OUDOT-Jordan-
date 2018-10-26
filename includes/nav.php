@@ -29,9 +29,6 @@ nav
           <input type="hidden" name="genre_id" value=" <?php echo $donnees['ID_genre']; ?> ">
         <li>  <input type="submit" name="button" value=" <?php echo $donnees['genre']; ?>" ></li>
         </form>
-
-
-
               <?php
 
 

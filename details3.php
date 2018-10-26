@@ -39,8 +39,8 @@
 
 
     // On affiche chaque entrée une à une
-    while ($donnees = $requestDetail->fetch())
-    {
+    $donnees = $requestDetail->fetch();
+    
         $IDfilm =  $donnees['ID_film'];
         $titreFilm =  $donnees['titre_film'];
         $synopsisFilm = $donnees['synopsis_film'];
@@ -49,7 +49,7 @@
         $acteurs =  $donnees["prenom_acteur"] . " " . $donnees["nom_acteur"] ;
         $realisateur = $donnees["prenom_real"] . " " . $donnees["nom_real"];
 
-    }
+    
 
 
     $requestDetail->closeCursor(); // Termine le traitement de la requête
@@ -96,6 +96,9 @@
       </div>
     </main>
   </div>
+  <script type="text/javascript">
+
+  </script>
       <footer>
         <?php
         include("includes/footer.html");
